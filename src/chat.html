@@ -3,41 +3,42 @@
         <title>Chat App</title>
     </head>
     <body class="bg-gray-200">
-
-        <div class="container mx-auto mt-10">
-            <div class="bg-gray-800 h-12 w-3/4 mx-auto text-white flex items-center">
-                <span class="flex-1 mx-4 font-mono">Chat Room</span>
-                <button
-                    class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white px-2 mr-2"
-                    type="button">
-                    Leave Room
-                </button>
-            </div>
-            <div class="flex flex-wrap" style="height: 500px;">
-                <div class="w-1/4 ml-auto bg-gray-500 h-full"></div>
-                <div class="w-2/4 mr-auto bg-gray-400 h-full box-border border-8 border-gray-400">
-                    <div id="chat-content" class="w-full h-full bg-white overflow-scroll border-b-0 box-border border-8 border-white">
-                        <div class="msg-block bg-blue-200 p-2 mb-2">
-                            <span class="username text-blue-700 text-sm">Kamal</span>
-                            <span class="time text-gray-600 text-sm">2020-10-01 12:56:32</span>
-                            <div class="msg">Hi There</div>
+        <form id="chatForm">
+            <div class="container mx-auto mt-10">
+                <div class="bg-gray-800 h-12 w-3/4 mx-auto text-white flex items-center">
+                    <span class="flex-1 mx-4 font-mono">Chat Room</span>
+                    <button
+                        class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white px-2 mr-2"
+                        type="button">
+                        Leave Room
+                    </button>
+                </div>
+                <div class="flex flex-wrap" style="height: 500px;">
+                    <div class="w-1/4 ml-auto bg-gray-500 h-full"></div>
+                    <div class="w-2/4 mr-auto bg-gray-400 h-full box-border border-8 border-gray-400">
+                        <div id="chat-content" class="w-full h-full bg-white overflow-scroll border-b-0 box-border border-8 border-white">
+                            <div class="msg-block bg-blue-200 p-2 mb-2">
+                                <span class="username text-blue-700 text-sm">Kamal</span>
+                                <span class="time text-gray-600 text-sm">2020-10-01 12:56:32</span>
+                                <div class="msg">Hi There</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-gray-800 h-14 w-3/4 mx-auto">
-                <div class="flex items-center py-2">
-                    <input
-                        class="appearance-none bg-white border-none w-full text-gray-700 mx-2 p-2 leading-tight focus:outline-none"
-                        type="text" name="msgbox">
-                    <button
-                        class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 mr-2"
-                        type="submit">
-                        Send
-                    </button>
+                <div class="bg-gray-800 h-14 w-3/4 mx-auto">
+                    <div class="flex items-center py-2">
+                        <input
+                            id="msgbox"
+                            class="appearance-none bg-white border-none w-full text-gray-700 mx-2 p-2 leading-tight focus:outline-none"
+                            type="text" name="msgbox">
+                        <button
+                            class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 mr-2"
+                            type="submit">
+                            Send
+                        </button>
+                    </div>
                 </div>
-
-            </div>
+            </form>
         </div>
     </body>
     <script src="./dist/main.js"></script>
