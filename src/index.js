@@ -1,15 +1,32 @@
 import "../node_modules/tailwindcss/dist/tailwind.css";
 import io from "socket.io-client";
+import Qs from "qs";
 
 const chatForm = document.getElementById('chatForm');
 const chatContainer = document.getElementById('chat-content');
+const roomName = document.getElementById('room-name');
+const userList = document.getElementById('room-users-list');
+
+// Get username and room from URL
+const {username, room} = Qs.parse(location.search, {
+    ignoreQueryPrefix: true
+});
+
 const socket = io();
+
+// Join chat room
+socket.emit('joinRoom', {username, room});
+
+socket.on('roomUsers', ({room, users}) => {
+    outputRoomName(room);
+    outputUsers(users);
+});
 
 // Message from server
 socket.on('message', msg => {
     outputMessage(msg);
 
-    // Scroll down
+    // Scroll down 
     chatContainer.scrollTop = chatContainer.scrollHeight;
 
 });
@@ -38,4 +55,16 @@ function outputMessage(msg) {
         <div class="msg">${msg.text}</div>
     `;
     document.getElementById('chat-content').appendChild(div);
+}
+
+// Add roomname to chat
+function outputRoomName(room) {
+    roomName.innerText = `Active Room: ${room}`;
+}
+
+// Add users to DOM
+function outputUsers(users) {
+    userList.innerHTML = `
+        ${users.map(user => `<li class="py-2 border-b border-gray-300 text-sm">${user.username}</li>`).join('')}
+    `;
 }
