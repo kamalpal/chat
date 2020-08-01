@@ -33,9 +33,9 @@ function outputMessage(msg) {
     const div = document.createElement('div');
     div.classList.add('msg-block', 'bg-blue-200', 'p-2', 'mb-2');
     div.innerHTML = `
-        <span class="username text-blue-700 text-sm">Kamal</span>
-        <span class="time text-gray-600 text-sm">2020-10-01 12:56:32</span>
-        <div class="msg">${msg}</div>
+        <span class="username text-blue-700 text-sm">${msg.username}</span>
+        <span class="time text-gray-600 text-sm">${msg.time}</span>
+        <div class="msg">${msg.text}</div>
     `;
     document.getElementById('chat-content').appendChild(div);
 }
