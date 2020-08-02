@@ -23,7 +23,7 @@ services:
 
   nodejs:
     container_name: nodejs
-    image: node
+    image: nodejs
     build:
       context: ./
       dockerfile: ./nodejs/Dockerfile
