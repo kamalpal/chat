@@ -2,8 +2,8 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
-const formatMessage = require('./src/utils/messages');
-const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require('./src/utils/users');
+const formatMessage = require('./app/utils/messages');
+const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require('./app/utils/users');
 
 const app = express();
 const server = http.createServer(app);
@@ -11,7 +11,7 @@ const io = socketio(server);
 const systemName = 'Bot';
 
 // Set static folder
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, 'app')));
 
 // Run when client connets
 io.on('connection', socket => {
