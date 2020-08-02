@@ -1,3 +1,6 @@
 node_modules
 src/dist
-mongo
+mongo/*
+!mongo/db_data/
+mongo/db_data/*
+!mongo/db_data/.gitkeep
