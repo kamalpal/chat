@@ -4,5 +4,5 @@
 docker-compose.yml
 .git
 node_modules
-db-data
+mongo
 nodejs

@@ -3,10 +3,14 @@ services:
   
   mongo:
     image: mongo
+    volumes:
+      - ./mongo/db_data:/data/db
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27017:27017"
     networks:
       - net
 
@@ -25,7 +29,7 @@ services:
     container_name: nodejs
     image: nodejs
     build:
-      context: ./
+      context: .
       dockerfile: ./nodejs/Dockerfile
     ports:
       - "3000:3000"
