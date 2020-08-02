@@ -1,6 +1,6 @@
 FROM node:stretch-slim
 
-COPY ./src /usr/share/chat
+COPY ./ /usr/share/chat
 
 RUN cd /usr/share/chat && npm install && npm run build
 

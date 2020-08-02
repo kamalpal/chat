@@ -1,0 +1,8 @@
+.dockerignore
+.gitignore
+.DS_Store
+docker-compose.yml
+.git
+node_modules
+db-data
+nodejs
